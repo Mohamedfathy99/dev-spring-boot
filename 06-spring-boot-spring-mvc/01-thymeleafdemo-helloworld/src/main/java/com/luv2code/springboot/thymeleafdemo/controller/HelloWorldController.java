@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,7 +14,7 @@ public class HelloWorldController {
 
 
     // need a controller method to show the initial HTML form
-    @RequestMapping("/showForm")
+    @GetMapping("/showForm")
     public String showForm(){
         return "helloworld-form";
     }
@@ -44,8 +46,9 @@ public class HelloWorldController {
         return "helloworld";
     }
 
-    @RequestMapping("/processFormVersionThree")
-    public String processFormVersionThree(@RequestParam("studentName") String theName, Model model){
+    @PostMapping("/processFormVersionThree")
+    public String processFormVersionThree(@RequestParam("studentName") String theName,
+                                          Model model){
 
 //        We don't need this code now because spring do it behind the scenes for us
 //        after add @RequestParam("studentName")
