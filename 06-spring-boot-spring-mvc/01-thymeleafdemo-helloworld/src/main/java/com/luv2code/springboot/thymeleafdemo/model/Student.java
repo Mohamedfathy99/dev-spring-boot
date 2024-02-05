@@ -15,7 +15,7 @@ public class Student {
         this.lastName = lastName;
         this.country = country;
     }
-    
+
     public String getFirstName() {
         return firstName;
     }
