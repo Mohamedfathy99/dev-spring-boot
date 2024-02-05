@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student confirmation Form</title>
+</head>
+
+<body>
+
+<h3>Student confirmation Form</h3>
+
+
+    <!-- This line is responsible for calls student.getFirstName and student.getLastName -->
+Ths student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName}"/>
+</body>
+</html>
