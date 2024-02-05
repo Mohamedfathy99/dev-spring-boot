@@ -24,6 +24,19 @@
 
     <br><br>
 
+    country:
+    <select th:field="*{country}">
+
+        <option th:value="Egypt">Egypt</option>
+        <option th:value="Palestine">Palestine</option>
+        <option th:value="Syria">Syria</option>
+        <option th:value="Qatar">Qatar</option>
+        <option th:value="Saudi Arabia">Saudi Arabia</option>
+        <option th:value="Brazil">Brazil</option>
+
+    </select>
+
+    <br><br>
     <!-- When the form is submitted, Spring MVC will create new Student instance,
          and added to the model, then call
         student.setFirstName()
