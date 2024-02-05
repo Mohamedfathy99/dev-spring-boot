@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+<h3>Student Registration Form</h3>
+
+<!-- {student} is the Name of model attribute in {showForm} method in {StudentController} -->
+<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+
+
+    <!-- When the form is loaded, Spring MVC will read student form from the model, then call
+         student.getFirstName()
+         student.getLastName()-->
+
+    <!-- *{...} is shortcut syntax for: @{student.firstName} -->
+    First name: <input type="text" th:field="*{firstName}"/>
+
+    <br><br>
+    <!-- *{...} is shortcut syntax for: @{student.lastName} -->
+    Last name: <input type="text" th:field="*{lastName}"/>
+
+    <br><br>
+
+    <!-- When the form is submitted, Spring MVC will create new Student instance,
+         and added to the model, then call
+        student.setFirstName()
+        student.setLastName()-->
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
