@@ -23,30 +23,38 @@
     Last name: <input type="text" th:field="*{lastName}"/>
 
     <br><br>
-<!--
-    Country:
 
-    <select th:field="*{country}">
 
-        <option th:value="Brazil">Brazil</option>
-        <option th:value="France">France</option>
-        <option th:value="Germany">Germany</option>
-        <option th:value="India">India</option>
-
-</select>
--->
+<!-- update this, instead of have the data hard-coded, use the data from the model
+ and loop over the data do all of these dynamically. so delete all hard-coded  -->
     country:
 
     <select th:field="*{country}">
 
+        <!-- loop over the list of countries
+         "tempCountry" is the temp that loop variable -->
+            <!-- details of tempCountry in option statement
+                 1st tempCountry is the Temp that loop variable which loop on countries list
+                 2nd tempCountry is the Value sent during form submission
+                 3rd tempCountry is the Displayed value to user
+            -->
+    <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}" />
+
+    </select>
+
+<!--    country:
+
+    <select th:field="*{country}">
+
         <option th:value="Egypt">Egypt</option>
-        <option th:value="Palestine">Palestine</option>
+       <option th:value="Palestine">Palestine</option>
         <option th:value="Syria">Syria</option>
         <option th:value="Qatar">Qatar</option>
-        <option th:value="Saudi-Arabia">Saudi-Arabia</option>
+       <option th:value="Saudi-Arabia">Saudi-Arabia</option>
 
 
     </select>
+-->
 
     <br><br>
     <!-- When the form is submitted, Spring MVC will create new Student instance,
