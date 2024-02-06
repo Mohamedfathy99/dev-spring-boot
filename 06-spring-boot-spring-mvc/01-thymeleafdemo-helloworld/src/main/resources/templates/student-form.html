@@ -57,6 +57,19 @@
 -->
 
     <br><br>
+
+    Favourite Programming Language:
+            <!-- th: field -> binding to property on Student object,
+                 th: value -> Value sent during form submission
+                 actual information inside the angle brackets -> that's actually displayed to the user   -->
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="Go"> Go </input>
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="Java"> Java </input>
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="Python"> Python </input>
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="Javascript"> Javascript </input>
+
+
+
+    <br><br>
     <!-- When the form is submitted, Spring MVC will create new Student instance,
          and added to the model, then call
         student.setFirstName()
