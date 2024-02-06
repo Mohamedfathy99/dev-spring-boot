@@ -6,13 +6,16 @@ public class Student {
     private String lastName;
     private String country;
 
+    private String favouriteLanguage;
+
     public Student() {
     }
 
-    public Student(String firstName, String lastName, String country) {
+    public Student(String firstName, String lastName, String country, String favouriteLanguage) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
+        this.favouriteLanguage = favouriteLanguage;
     }
 
     public String getFirstName() {
@@ -37,5 +40,13 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getFavouriteLanguage() {
+        return favouriteLanguage;
+    }
+
+    public void setFavouriteLanguage(String favouriteLanguage) {
+        this.favouriteLanguage = favouriteLanguage;
     }
 }
