@@ -59,14 +59,32 @@
     <br><br>
 
     Favourite Programming Language:
-            <!-- th: field -> binding to property on Student object,
-                 th: value -> Value sent during form submission
-                 actual information inside the angle brackets -> that's actually displayed to the user   -->
-    <input type="radio" th:field="*{favouriteLanguage}" th:value="Go"> Go </input>
-    <input type="radio" th:field="*{favouriteLanguage}" th:value="Java"> Java </input>
-    <input type="radio" th:field="*{favouriteLanguage}" th:value="Python"> Python </input>
-    <input type="radio" th:field="*{favouriteLanguage}" th:value="Javascript"> Javascript </input>
 
+    <!-- loop over the list of languages
+ "tempLanguage" is the temp that loop variable -->
+    <!-- details of tempLanguage in option statement
+         1st favouriteLanguage binding to the property on Student object
+         2nd tempLanguage is the Temp that loop variable which loop on languages list
+         3rd tempLanguage is the Value sent during form submission
+         4th tempLanguage is the Displayed value to user
+    -->
+    <input type="radio" th:field="*{favouriteLanguage}"
+                        th:each="tempLanguage : ${languages}"
+                        th:value="${tempLanguage}"
+                        th:text="${tempLanguage}"/>
+
+
+    <!-- th: field -> binding to property on Student object,
+         th: value -> Value sent during form submission
+         actual information inside the angle brackets -> that's actually displayed to the user   -->
+<!-- update this, instead of have the data hard-coded, use the data from the model
+ and loop over the data do all of these dynamically. so delete all hard-coded  -->
+<!--
+        <input type="radio" th:field="*{favouriteLanguage}" th:value="Go"> Go </input>
+        <input type="radio" th:field="*{favouriteLanguage}" th:value="Java"> Java </input>
+        <input type="radio" th:field="*{favouriteLanguage}" th:value="Python"> Python </input>
+        <input type="radio" th:field="*{favouriteLanguage}" th:value="Javascript"> Javascript </input>
+-->
 
 
     <br><br>
