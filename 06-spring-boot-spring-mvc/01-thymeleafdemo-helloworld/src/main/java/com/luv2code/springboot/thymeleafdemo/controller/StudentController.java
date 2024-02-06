@@ -15,10 +15,15 @@ import java.util.List;
 @Controller
 public class StudentController {
 
-//    #step2 -  inject the countries int the StudentController using @Value
+//    #step2 -  inject the countries into the StudentController using @Value
+
+//    #step2 -  inject the favouriteLanguage into the StudentController using @Value
 
     @Value("${countries}")
     private List<String> countries;
+
+    @Value("${languages}")
+    private List<String> languages;
 
     // need a controller method to show the initial HTML form
     @GetMapping("/showStudentForm")
@@ -32,6 +37,11 @@ public class StudentController {
 
 //        #step3 -  add the list of countries to the model
         theModel.addAttribute("countries", countries);
+
+//        #step3 -  add the list of languages to the model
+        theModel.addAttribute("languages", languages);
+
+
 
         return "student-form";
     }
