@@ -25,6 +25,9 @@ public class StudentController {
     @Value("${languages}")
     private List<String> languages;
 
+    @Value("${operatingSystems}")
+    private List<String> operatingSystems;
+
     // need a controller method to show the initial HTML form
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel){
@@ -40,6 +43,10 @@ public class StudentController {
 
 //        #step3 -  add the list of languages to the model
         theModel.addAttribute("languages", languages);
+
+//        #step3 -  add the list of Operating Systems to the model
+        theModel.addAttribute("operatingSystems", operatingSystems);
+
 
         return "student-form";
     }
