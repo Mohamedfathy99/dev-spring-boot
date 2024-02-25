@@ -22,7 +22,22 @@ Country: <span th:text="${student.country}" />
 <!-- This line is responsible for calls student.getFavouriteLanguage -->
 Favourite Programming Language: <span th:text="${student.favouriteLanguage}" />
 
+<br><br>
+
+<!-- This line is responsible for calls student.getFavouriteLanguage -->
+<!--Favourite Operating Systems: <span th:text="${student.favouriteSystems}" />-->
+
+Favourite Operating Systems:
+
+<ul>
+    <li th:each="tempSystem : ${student.favouriteSystems}" th:text="${tempSystem}" />
+</ul>
 
 
 </body>
 </html>
+
+
+
+
+
