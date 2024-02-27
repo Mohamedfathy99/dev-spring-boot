@@ -13,7 +13,7 @@ public class Customer {
     @NotNull(message = "is required")
     @Min(value = 0, message = "must be greater than or equal to zero")
     @Max(value = 10, message = "must be less than or equal to 10")
-    private int freePasses;
+    private Integer freePasses;
 
     // add a validation rule for regular expression
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
@@ -27,11 +27,11 @@ public class Customer {
         this.postalCode = postalCode;
     }
 
-    public int getFreePasses() {
+    public Integer getFreePasses() {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 
