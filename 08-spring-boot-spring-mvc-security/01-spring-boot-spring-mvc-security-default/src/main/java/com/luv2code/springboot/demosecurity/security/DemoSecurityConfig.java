@@ -29,7 +29,7 @@ public class DemoSecurityConfig {
         jdbcUserDetailsManager.setAuthoritiesByUsernameQuery(
                 "select user_id, role from roles where user_id=?"
         );
-        
+
         return jdbcUserDetailsManager;
     }
 
