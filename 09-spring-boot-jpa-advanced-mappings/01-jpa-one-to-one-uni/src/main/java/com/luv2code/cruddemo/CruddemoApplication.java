@@ -23,7 +23,7 @@ public class CruddemoApplication {
 
 	private void createInstructor(AppDAO appDAO) {
 
-
+        /*
 		// Create the instructor
 		Instructor tempInstructor =
 				new Instructor("Mohamed", "Fathy", "fathy@gmail.com");
@@ -33,6 +33,17 @@ public class CruddemoApplication {
 				new InstructorDetail(
 						"http://www.fathy.com/youtube",
 						"football & love 2 Coding!!!! "
+				);
+       */
+		// Create the instructor
+		Instructor tempInstructor =
+				new Instructor("Yousef", "Fathy", "yousef@gmail.com");
+
+		// Create the InstructorDetail
+		InstructorDetail tempInstructorDetail =
+				new InstructorDetail(
+						"http://www.yousef.com/youtube",
+						"football & love gaming!!!! "
 				);
 		// associate these two objects together with oneToOne relationship
 		tempInstructor.setInstructorDetail(tempInstructorDetail);
