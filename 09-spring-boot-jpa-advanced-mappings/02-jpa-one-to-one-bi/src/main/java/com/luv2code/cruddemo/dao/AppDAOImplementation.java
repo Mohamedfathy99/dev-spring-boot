@@ -5,6 +5,7 @@ import com.luv2code.cruddemo.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.support.NullValue;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -54,6 +55,10 @@ public class AppDAOImplementation implements AppDAO{
 
         // retrieve instructor details
         InstructorDetail tempInstructorDetail = entityManager.find(InstructorDetail.class, id);
+
+        // remove the associated object reference
+        // break bi-directional link
+        tempInstructorDetail.getInstructor().setInstructorDetail(null);
 
         // delete the instructor Detail
         entityManager.remove(tempInstructorDetail);
