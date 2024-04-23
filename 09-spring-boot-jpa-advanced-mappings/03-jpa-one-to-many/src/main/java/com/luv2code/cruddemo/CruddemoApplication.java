@@ -28,9 +28,24 @@ public class CruddemoApplication {
 
 //			deleteInstructorDetail(appDAO);
 
-			createInstructorWithCourses(appDAO);
+//			createInstructorWithCourses(appDAO);
+
+			findInstructorWithCourses(appDAO);
 
 		};
+	}
+
+	private void findInstructorWithCourses(AppDAO appDAO) {
+
+		int id = 1;
+		System.out.println("Finding instructor id: "+ id);
+
+		Instructor tempInstructor = appDAO.findInstructorById(id);
+
+		System.out.println("tempInstructor: "+ tempInstructor);
+		System.out.println("The associated courses: "+tempInstructor.getCourses());
+
+		System.out.println("Done!");
 	}
 
 	private void createInstructorWithCourses(AppDAO appDAO) {
@@ -62,7 +77,7 @@ public class CruddemoApplication {
 		// because of CascadeType.PERSIST
 		//
 		System.out.println("Saving instructor: "+ tempInstructor);
-		System.out.println("The courses:" + tempInstructor.getCourses());
+		System.out.println("The courses: " + tempInstructor.getCourses());
 		appDAO.save(tempInstructor);
 
 		System.out.println("Done!");
