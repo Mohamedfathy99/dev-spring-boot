@@ -42,9 +42,22 @@ public class CruddemoApplication {
 
 //			updateCourse(appDAO);
 
-			deleteInstructor(appDAO);
+//			deleteInstructor(appDAO);
+
+			deleteCourse(appDAO);
 
 		};
+	}
+
+	private void deleteCourse(AppDAO appDAO) {
+
+		int id = 10;
+		System.out.println("Deleting Course id: " + id);
+
+		appDAO.deleteCourseById(id);
+
+		System.out.println("Deleted Done!");
+
 	}
 
 	private void updateCourse(AppDAO appDAO) {
