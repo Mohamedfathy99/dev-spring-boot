@@ -12,6 +12,7 @@ public class MyDemoLoggingAspect {
 
     // let's start with an @Before advice
 
+//    @Before("execution(public void updateAccount())")
     @Before("execution(public void addAccount())")
     public void beforeAddAccountAdvice(){
 
