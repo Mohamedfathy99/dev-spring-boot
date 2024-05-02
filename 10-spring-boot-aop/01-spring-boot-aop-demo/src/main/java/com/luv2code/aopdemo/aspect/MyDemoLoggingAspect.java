@@ -12,12 +12,7 @@ public class MyDemoLoggingAspect {
 
     // let's start with an @Before advice
 
-//    @Before("execution(public void updateAccount())")
-//    @Before("execution(public void com.luv2code.aopdemo.dao.AccountDAO.addAccount())")
-    // Match method starting with add in any class using wildcard (*)
-//    @Before("execution(public void add*())")
-
-    @Before("execution(* add*())")
+    @Before("execution(* add*(com.luv2code.aopdemo.Account))")
     public void beforeAddAccountAdvice(){
 
         System.out.println("\n=====> Executing @Before advice on addAccount()");
