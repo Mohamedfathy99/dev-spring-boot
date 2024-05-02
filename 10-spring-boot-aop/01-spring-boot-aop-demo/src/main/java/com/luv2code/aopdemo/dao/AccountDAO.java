@@ -5,4 +5,6 @@ import com.luv2code.aopdemo.Account;
 public interface AccountDAO {
 
     void addAccount(Account account, boolean vipFlag);
+
+    boolean doWork();
 }

@@ -14,8 +14,8 @@ public class MyDemoLoggingAspect {
 
 //    @Before("execution(* add*(com.luv2code.aopdemo.Account, ..))")
 
-    // match for any params
-    @Before("execution(* add*(..))")
+    // match for any method in package .* -> for any class - .* -> for any method - (..) for any params
+    @Before("execution(* com.luv2code.aopdemo.dao.*.*(..))")
 
     public void beforeAddAccountAdvice(){
 
