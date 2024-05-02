@@ -26,8 +26,9 @@ public class AopdemoApplication {
 
 		// create an account object and then pass to method
 		Account account = new Account();
+
 		// call the business method
-		theAccountDAO.addAccount(account);
+		theAccountDAO.addAccount(account, true);
 
 		// call the membership business method
 		theMembershipDAO.addAccount();
