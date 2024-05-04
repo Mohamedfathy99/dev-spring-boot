@@ -34,4 +34,9 @@ public class MyDemoLoggingAspect {
     public void performApiAnalytics(){
         System.out.println("\n=====> Performing API Analytics");
     }
+    @Before("forDaoPackageNoGetterSetter()")
+    public void logToCloudAsync(){
+        System.out.println("\n=====> Logging to cloud in async fashion");
+    }
+
 }
