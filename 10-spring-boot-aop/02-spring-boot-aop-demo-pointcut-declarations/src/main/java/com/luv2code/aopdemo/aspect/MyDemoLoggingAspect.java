@@ -21,15 +21,25 @@ public class MyDemoLoggingAspect {
             ProceedingJoinPoint theProceedingJoinPoint) throws Throwable{
 
         // print out method we are advising on
+        // print out which method we are advising on
+        String method = theProceedingJoinPoint.getSignature().toShortString();
+        System.out.println("\n=====>>> Execution @Around on method: " + method);
 
         // get begin timestamp
+        long begin = System.currentTimeMillis();
 
         // now, let's execute the method
-
+        Object result = theProceedingJoinPoint.proceed();
         // get end timestamp
+        long end = System.currentTimeMillis();
 
         // compute duration and display it
-        return null;
+        long duration = end - begin;
+
+        // convert milliseconds to seconds by divide by 1000.0
+        System.out.println("\n=====> Duration: " + duration / 1000.0 + " seconds");
+
+        return result;
     }
 
 
