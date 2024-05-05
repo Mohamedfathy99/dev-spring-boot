@@ -26,7 +26,8 @@ public class AopdemoApplication {
 
 		// create an account object and then pass to method
 		Account account = new Account();
-
+		account.setName("Mohamed");
+		account.setLevel("Gold");
 		// call the business method
 		theAccountDAO.addAccount(account, true);
 		theAccountDAO.doWork();
